@@ -1,0 +1,217 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "slides/**",
+              "ui_kits/portal-web/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Poppins|Fredoka|Arimo))/i]",
+        "message": "Font not provided by the design system. Available: Poppins, Fredoka, Arimo."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--accent-green",
+      "--accent-orange",
+      "--bg-1",
+      "--bg-2",
+      "--bg-3",
+      "--bg-navy",
+      "--blue-tint",
+      "--border",
+      "--border-strong",
+      "--danger",
+      "--danger-bg",
+      "--fg-1",
+      "--fg-2",
+      "--fg-3",
+      "--fg-4",
+      "--flag-blue",
+      "--flag-red",
+      "--flag-yellow",
+      "--font-body",
+      "--font-display",
+      "--font-rounded",
+      "--green-tint",
+      "--guarenas-blue",
+      "--guarenas-blue-600",
+      "--guarenas-blue-700",
+      "--guarenas-green",
+      "--guarenas-navy",
+      "--guarenas-navy-900",
+      "--guarenas-yellow",
+      "--info",
+      "--info-bg",
+      "--orange-tint",
+      "--r-lg",
+      "--r-md",
+      "--r-pill",
+      "--r-sm",
+      "--r-xl",
+      "--r-xs",
+      "--ring-focus",
+      "--s-1",
+      "--s-10",
+      "--s-12",
+      "--s-16",
+      "--s-2",
+      "--s-20",
+      "--s-24",
+      "--s-3",
+      "--s-4",
+      "--s-5",
+      "--s-6",
+      "--s-8",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--shadow-xl",
+      "--success",
+      "--success-bg",
+      "--t-body",
+      "--t-body-lg",
+      "--t-caption",
+      "--t-display",
+      "--t-h1",
+      "--t-h2",
+      "--t-h3",
+      "--t-h4",
+      "--t-h5",
+      "--t-small",
+      "--w-bold",
+      "--w-extrabold",
+      "--w-light",
+      "--w-medium",
+      "--w-regular",
+      "--w-semibold",
+      "--warning",
+      "--warning-bg",
+      "--yellow-tint"
+    ],
+    "tokenKinds": {
+      "--guarenas-blue": "color",
+      "--guarenas-blue-600": "color",
+      "--guarenas-blue-700": "color",
+      "--guarenas-navy": "color",
+      "--guarenas-navy-900": "color",
+      "--guarenas-yellow": "color",
+      "--guarenas-green": "color",
+      "--accent-orange": "color",
+      "--accent-green": "color",
+      "--flag-yellow": "color",
+      "--flag-blue": "color",
+      "--flag-red": "color",
+      "--fg-1": "color",
+      "--fg-2": "color",
+      "--fg-3": "color",
+      "--fg-4": "color",
+      "--bg-1": "color",
+      "--bg-2": "color",
+      "--bg-3": "color",
+      "--bg-navy": "color",
+      "--border": "color",
+      "--border-strong": "color",
+      "--success": "color",
+      "--success-bg": "color",
+      "--warning": "color",
+      "--warning-bg": "color",
+      "--danger": "color",
+      "--danger-bg": "color",
+      "--info": "color",
+      "--info-bg": "color",
+      "--blue-tint": "color",
+      "--orange-tint": "color",
+      "--yellow-tint": "color",
+      "--green-tint": "color",
+      "--font-display": "font",
+      "--font-rounded": "radius",
+      "--font-body": "font",
+      "--w-light": "other",
+      "--w-regular": "other",
+      "--w-medium": "other",
+      "--w-semibold": "other",
+      "--w-bold": "other",
+      "--w-extrabold": "other",
+      "--t-display": "spacing",
+      "--t-h1": "spacing",
+      "--t-h2": "spacing",
+      "--t-h3": "spacing",
+      "--t-h4": "spacing",
+      "--t-h5": "spacing",
+      "--t-body-lg": "spacing",
+      "--t-body": "spacing",
+      "--t-small": "spacing",
+      "--t-caption": "spacing",
+      "--r-xs": "spacing",
+      "--r-sm": "spacing",
+      "--r-md": "spacing",
+      "--r-lg": "spacing",
+      "--r-xl": "spacing",
+      "--r-pill": "spacing",
+      "--s-1": "spacing",
+      "--s-2": "spacing",
+      "--s-3": "spacing",
+      "--s-4": "spacing",
+      "--s-5": "spacing",
+      "--s-6": "spacing",
+      "--s-8": "spacing",
+      "--s-10": "spacing",
+      "--s-12": "spacing",
+      "--s-16": "spacing",
+      "--s-20": "spacing",
+      "--s-24": "spacing",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--shadow-xl": "shadow",
+      "--ring-focus": "shadow"
+    },
+    "fontFamilies": [
+      "Arimo",
+      "Fredoka",
+      "Poppins"
+    ]
+  }
+}
